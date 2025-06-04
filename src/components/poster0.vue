@@ -3,7 +3,7 @@
     <v-row justify="center">
       <v-col v-for="(index, name) in poster_name" :key="index" cols="12" md="4">
         <v-card>
-          <v-img :src="baseUrl + poster_path[index]" aspect-ratio="9/16" v-if="poster_name"></v-img>
+          <v-img :src="baseUrl + poster_path[index]" v-if="poster_name"></v-img>
           <v-card-text v-else>
             画像を読み込み中です...
           </v-card-text>
