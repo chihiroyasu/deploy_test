@@ -1,8 +1,8 @@
 <template>
   <!-- <HelloWorld /> -->
-  <imgDemo />
+  <Poster />
 </template>
 
 <script setup>
-  import imgDemo from '@/components/imgDemo.vue';
+  import Poster from '@/components/poster0.vue';
 </script>
