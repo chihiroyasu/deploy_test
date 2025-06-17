@@ -1,5 +1,4 @@
 <template>
-  <div class="body">
     <v-container>
       <v-row justify="center">
         <v-col
@@ -59,7 +58,6 @@
         </v-col>
       </v-row>
     </v-container>
-  </div> 
 </template>
 
 <script>

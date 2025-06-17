@@ -1,5 +1,4 @@
 <template>
-  <v-app id="inspire">
     <v-app-bar class="px-3" density="compact" flat>
       <v-avatar class="hidden-md-and-up" color="grey-darken-1" size="32" />
 
@@ -20,7 +19,6 @@
 
       <v-avatar class="hidden-sm-and-down" color="grey-darken-1" size="32" />
     </v-app-bar>
-  </v-app>
 </template>
 
 <script setup>

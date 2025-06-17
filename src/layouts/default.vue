@@ -1,14 +1,15 @@
 <template>
-  <v-main>
-    <Appbar>
+  <v-app>
+    <Appbar />
+    <v-main>
       <router-view />
-    </Appbar>
-  </v-main>
-
-  <AppFooter />
+    </v-main>
+    <AppFooter />
+  </v-app>
 </template>
 
 <script setup>
   //
   import Appbar from '@/components/Appbar.vue';
+import AppFooter from '@/components/AppFooter.vue';
 </script>
