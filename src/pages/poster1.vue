@@ -1,10 +1,8 @@
 <template>
   <!-- <HelloWorld /> -->
-  <Appbar />
   <Poster />
 </template>
 
 <script setup>
-  import Appbar from '@/components/Appbar.vue';
   import Poster from '@/components/poster0.vue';
 </script>
