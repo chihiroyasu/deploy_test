@@ -1,6 +1,6 @@
 <template>
   <v-main>
-    <Appbar theme="dark" />
+    <Appbar />
     <router-view />
   </v-main>
 
