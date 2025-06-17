@@ -4,5 +4,5 @@
 </template>
 
 <script setup>
-  import Poster from '@/components/poster0.vue';
+  import Poster from '@/components/poster2.vue';
 </script>
