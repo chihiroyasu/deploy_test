@@ -1,5 +1,6 @@
 <template>
   <v-main>
+    <Appbar theme="dark" />
     <router-view />
   </v-main>
 
@@ -8,4 +9,5 @@
 
 <script setup>
   //
+  import Appbar from '@/components/Appbar.vue';
 </script>
