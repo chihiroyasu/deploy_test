@@ -1,57 +1,37 @@
 <template>
   <v-app id="inspire">
-    <v-app-bar
-      class="px-3"
-      density="compact"
-      flat
-    >
-      <v-avatar
-        class="hidden-md-and-up"
-        color="grey-darken-1"
-        size="32"
-      ></v-avatar>
+    <v-app-bar class="px-3" density="compact" flat>
+      <v-avatar class="hidden-md-and-up" color="grey-darken-1" size="32" />
 
       <v-spacer></v-spacer>
 
-      <v-tabs
-        align-tabs="center"
-        color="grey-darken-2"
-      >
+      <v-tabs align-tabs="center" color="grey-darken-2" v-model="tab">
         <v-tab
           v-for="link in links"
-          :key="link"
-          :text="link"
-        ></v-tab>
+          :key="link.text"
+          :to="link.to"
+          replace
+        >
+          {{ link.text }}
+        </v-tab>
       </v-tabs>
+
       <v-spacer></v-spacer>
 
-      <v-avatar
-        class="hidden-sm-and-down"
-        color="grey-darken-1"
-        size="32"
-      ></v-avatar>
+      <v-avatar class="hidden-sm-and-down" color="grey-darken-1" size="32" />
     </v-app-bar>
   </v-app>
 </template>
 
 <script setup>
-  const links = [
-    'Poster',
-    'Poster1',
-    'Poster2',
-    'demo',
-  ]
-</script>
+import { ref } from 'vue'
 
-<script>
-  export default {
-    data: () => ({
-      links: [
-        '',
-        'poster1',
-        'poster2',
-        'demo',
-      ],
-    }),
-  }
+const tab = ref(null)
+
+const links = [
+  { text: 'Poster', to: '/poster' },
+  { text: 'Poster1', to: '/poster1' },
+  { text: 'Poster2', to: '/poster2' },
+  { text: 'Demo', to: '/demo' },
+]
 </script>
