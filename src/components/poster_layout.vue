@@ -1,79 +1,90 @@
 <template>
-  <dev class="inspire">
+  <v-app>
     <v-main>
-      <v-sheet
-        class="mx-auto pa-2 pt-6"
-        color="grey-lighten-4"
-      >
-        <v-sheet
-          color="grey-lighten-2"
-          height="24"
-          rounded="pill"
-          width="88"
-        ></v-sheet>
+      <!-- セクション1 -->
+      <v-sheet class="mx-auto pa-2 pt-6" color="grey-lighten-4">
+        <v-sheet color="grey-lighten-2" height="24" rounded="pill" width="88" />
 
         <v-slide-group show-arrows>
           <v-slide-group-item
-            v-for="n in 5"
-            :key="n"
+            v-for="(url, index) in poster_path.slice(0, 5)"
+            :key="'s1-' + index"
           >
-            <v-sheet
+            <v-img
+              :src="baseUrl + url"
               class="ma-3"
-              color="grey-lighten-1"
               height="200"
               width="250"
-              rounded
-            ></v-sheet>
+              style="object-fit: fill;"
+            />
           </v-slide-group-item>
         </v-slide-group>
       </v-sheet>
 
-      <v-sheet
-        class="mx-auto pa-2 pt-6"
-        color="grey-lighten-2"
-      >
-        <v-sheet
-          color="grey"
-          height="24"
-          rounded="pill"
-          width="88"
-        ></v-sheet>
+      <!-- セクション2 -->
+      <v-sheet class="mx-auto pa-2 pt-6" color="grey-lighten-2">
+        <v-sheet color="grey" height="24" rounded="pill" width="88" />
 
         <v-slide-group show-arrows>
           <v-slide-group-item
-            v-for="n in 15"
-            :key="n"
+            v-for="(url, index) in poster_path.slice(5, 20)"
+            :key="'s2-' + index"
           >
-            <v-sheet
-              :width="n === 1 ? 300 : 150"
+            <v-img
+              :src="baseUrl + url"
+              :width="index === 0 ? 300 : 150"
               class="ma-3"
-              color="grey-lighten-1"
               height="200"
-              rounded
-            ></v-sheet>
+              style="object-fit: fill;"
+            />
           </v-slide-group-item>
         </v-slide-group>
 
+        <!-- グリッド -->
         <v-container fluid>
           <v-row>
             <v-col
-              v-for="n in 24"
-              :key="n"
+              v-for="(url, index) in poster_path.slice(20)"
+              :key="'grid-' + index"
               cols="2"
             >
-              <v-sheet
-                color="grey-lighten-1"
+              <v-img
+                :src="baseUrl + url"
                 height="200"
-                rounded
-              ></v-sheet>
+                width="100%"
+                style="object-fit: fill;"
+              />
             </v-col>
           </v-row>
         </v-container>
       </v-sheet>
     </v-main>
-  </dev>
+  </v-app>
 </template>
 
-<script setup>
-  //
+<script>
+import axios from 'axios'
+
+export default {
+  name: 'ImageDashboard',
+  data() {
+    return {
+      poster_path: [],
+      baseUrl: 'https://raspberrypi.tail8fca5.ts.net',
+    }
+  },
+  mounted() {
+    this.fetchImages()
+  },
+  methods: {
+    async fetchImages() {
+      try {
+        const res = await axios.get('https://raspberrypi.tail8fca5.ts.net/posters_info/')
+        this.poster_path = res.data.urls || []
+      } catch (error) {
+        console.error('画像の取得に失敗:', error)
+      }
+    },
+  },
+}
 </script>
