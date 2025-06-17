@@ -1,5 +1,5 @@
 <template>
-  <v-app id="inspire">
+  <dev class="inspire">
     <v-system-bar>
       <v-spacer></v-spacer>
 
@@ -271,7 +271,7 @@
         </v-container>
       </v-sheet>
     </v-main>
-  </v-app>
+  </dev>
 </template>
 
 <script setup>

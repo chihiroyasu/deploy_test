@@ -4,5 +4,5 @@
 </template>
 
 <script setup>
-  import Poster from '@/components/poster0.vue';
+  import Poster from '@/components/poster_layout.vue';
 </script>

@@ -1,63 +1,65 @@
 <template>
-  <v-container>
-    <v-row justify="center">
-      <v-col
-        v-for="(name, index) in poster_name"
-        :key="index"
-        cols="12"
-        md="4"
-      >
-        <v-card>
-          <template v-if="poster_path[index]">
-            <v-img
-              :src="baseUrl + poster_path[index]"
-              height="200px"
-            ></v-img>
-            <v-card-title>{{ name }}</v-card-title>
-          </template>
-          <template v-else>
-            <v-card-text>画像を読み込み中です...</v-card-text>
-          </template>
-        </v-card>
-        <v-card>
-          <template v-if="poster_path[index]">
-            <v-img
-              :src="baseUrl + poster_path[index]"
-              height="200px"
-            ></v-img>
-            <v-card-title>{{ name }}</v-card-title>
-          </template>
-          <template v-else>
-            <v-card-text>画像を読み込み中です...</v-card-text>
-          </template>
-        </v-card>
-        <v-card>
-          <template v-if="poster_path[index]">
-            <v-img
-              :src="baseUrl + poster_path[index]"
-              height="200px"
-            ></v-img>
-            <v-card-title>{{ name }}</v-card-title>
-          </template>
-          <template v-else>
-            <v-card-text>画像を読み込み中です...</v-card-text>
-          </template>
-        </v-card>
-        <v-card>
-          <template v-if="poster_path[index]">
-            <v-img
-              :src="baseUrl + poster_path[index]"
-              height="200px"
-            ></v-img>
-            <v-card-title>{{ name }}</v-card-title>
-          </template>
-          <template v-else>
-            <v-card-text>画像を読み込み中です...</v-card-text>
-          </template>
-        </v-card>
-      </v-col>
-    </v-row>
-  </v-container>
+  <div class="body">
+    <v-container>
+      <v-row justify="center">
+        <v-col
+          v-for="(name, index) in poster_name"
+          :key="index"
+          cols="12"
+          md="4"
+        >
+          <v-card>
+            <template v-if="poster_path[index]">
+              <v-img
+                :src="baseUrl + poster_path[index]"
+                height="200px"
+              ></v-img>
+              <v-card-title>{{ name }}</v-card-title>
+            </template>
+            <template v-else>
+              <v-card-text>画像を読み込み中です...</v-card-text>
+            </template>
+          </v-card>
+          <v-card>
+            <template v-if="poster_path[index]">
+              <v-img
+                :src="baseUrl + poster_path[index]"
+                height="200px"
+              ></v-img>
+              <v-card-title>{{ name }}</v-card-title>
+            </template>
+            <template v-else>
+              <v-card-text>画像を読み込み中です...</v-card-text>
+            </template>
+          </v-card>
+          <v-card>
+            <template v-if="poster_path[index]">
+              <v-img
+                :src="baseUrl + poster_path[index]"
+                height="200px"
+              ></v-img>
+              <v-card-title>{{ name }}</v-card-title>
+            </template>
+            <template v-else>
+              <v-card-text>画像を読み込み中です...</v-card-text>
+            </template>
+          </v-card>
+          <v-card>
+            <template v-if="poster_path[index]">
+              <v-img
+                :src="baseUrl + poster_path[index]"
+                height="200px"
+              ></v-img>
+              <v-card-title>{{ name }}</v-card-title>
+            </template>
+            <template v-else>
+              <v-card-text>画像を読み込み中です...</v-card-text>
+            </template>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
+  </div> 
 </template>
 
 <script>

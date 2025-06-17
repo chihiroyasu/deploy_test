@@ -48,8 +48,8 @@
     data: () => ({
       links: [
         '',
-        'Poster1',
-        'Poster2',
+        'poster1',
+        'poster2',
         'demo',
       ],
     }),
